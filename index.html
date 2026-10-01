@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI előadás — Centervill Kft. év végi rendezvény | Budaházy Szabolcs</title>
+<meta name="description" content="Ajánlat és tematikai javaslat a Centervill Kft. 2026. december 16-i év végi rendezvényére: könnyed, humoros, ugyanakkor tartalmas AI előadás. 45 perc, 80 fő, Domonyvölgy.">
+<meta name="theme-color" content="#0e1512">
+<meta property="og:title" content="AI előadás — Centervill év végi rendezvény">
+<meta property="og:description" content="A mesterséges intelligencia a villamos szakmában: párhuzamok, mindennapi munka, iroda és terep. 45 perc, humorral.">
+<meta property="og:type" content="website">
+<style>
+/* ============ ALAP ============ */
+:root{
+  --zold:#1FA65A;
+  --zold-sotet:#0f6b39;
+  --zold-elve:#3DBB6A;
+  --sarga:#F2D80A;
+  --sarga-mely:#D6B800;
+  --dokk:#0e1512;
+  --dokk-2:#151f1a;
+  --pane:#f5f7f4;
+  --feher:#ffffff;
+  --szoveg:#26302b;
+  --szurke:#6b7a72;
+  --vonal:rgba(31,166,90,.18);
+  --arnyek:0 18px 50px -18px rgba(14,21,18,.35);
+  --max:1160px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Inter","Segoe UI",Roboto,system-ui,sans-serif;
+  color:var(--szoveg);
+  background:var(--feher);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:"Merriweather",Georgia,"Times New Roman",serif;line-height:1.22;letter-spacing:-.01em}
+a{color:var(--zold-sotet);text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{
+  font-family:"Inter",sans-serif;font-size:.74rem;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--zold);
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;
+}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--sarga);display:inline-block}
+.section{padding:96px 0;position:relative}
+.section h2{font-size:clamp(1.7rem,3.6vw,2.6rem);margin-bottom:18px}
+.section .lead{font-size:1.08rem;color:var(--szurke);max-width:70ch}
+.center{text-align:center}
+.center .lead{margin-left:auto;margin-right:auto}
+.center .eyebrow{justify-content:center}
+
+/* ============ NAV ============ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(14,21,18,.72);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.07);
+  transition:background .35s ease, box-shadow .35s ease;
+}
+nav.scrolled{background:rgba(14,21,18,.95);box-shadow:0 8px 30px -14px rgba(0,0,0,.6)}
+.nav-in{max-width:var(--max);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.nav-brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:700;letter-spacing:-.01em;font-size:.95rem}
+.nav-brand img{height:34px;width:auto;border-radius:4px;background:#fff;padding:3px 7px}
+.nav-links{display:flex;gap:26px;font-size:.86rem;font-weight:600}
+.nav-links a{color:rgba(255,255,255,.72);transition:color .2s}
+.nav-links a:hover{color:var(--sarga)}
+.nav-cta{
+  background:var(--sarga);color:#1a1a00 !important;padding:9px 18px;border-radius:100px;
+  font-weight:700;font-size:.84rem;transition:transform .2s, box-shadow .2s;
+  display:inline-block;
+}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 26px -10px rgba(242,216,10,.8)}
+@media(max-width:860px){.nav-links{display:none}}
+
+/* ============ HERO ============ */
+header.hero{
+  min-height:100svh;position:relative;display:flex;align-items:center;
+  background:var(--dokk);color:#fff;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url("assets/hero.jpg") center/cover no-repeat;
+  opacity:.5;transform:scale(1.06);
+  animation:heroZoom 22s ease-in-out infinite alternate;
+}
+@keyframes heroZoom{from{transform:scale(1.06)}to{transform:scale(1.16)}}
+.hero-scrim{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(1100px 620px at 12% 42%, rgba(14,21,18,.94) 0%, rgba(14,21,18,.62) 46%, rgba(14,21,18,.15) 100%),
+    linear-gradient(100deg, rgba(14,21,18,.92) 0%, rgba(14,21,18,.35) 60%, rgba(14,21,18,.75) 100%);
+}
+#particles{position:absolute;inset:0;z-index:1}
+.hero-in{position:relative;z-index:2;padding:130px 0 90px;max-width:820px}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(31,166,90,.16);border:1px solid rgba(61,187,106,.45);
+  border-radius:100px;padding:8px 18px;font-size:.78rem;font-weight:700;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--zold-elve);
+  margin-bottom:26px;
+}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--sarga);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.hero h1{font-size:clamp(2.1rem,5.6vw,4rem);margin-bottom:24px;color:#fff}
+.hero h1 .ki{color:var(--sarga);position:relative;white-space:nowrap}
+.hero h1 .ki::after{
+  content:"";position:absolute;left:0;right:0;bottom:.06em;height:.14em;
+  background:var(--zold);opacity:.5;border-radius:4px;transform:scaleX(0);
+  transform-origin:left;animation:underline 1s .7s ease forwards;
+}
+@keyframes underline{to{transform:scaleX(1)}}
+.hero p.sub{font-size:clamp(1rem,2.1vw,1.28rem);color:rgba(255,255,255,.83);max-width:62ch;margin-bottom:38px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px}
+.fact{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);
+  border-radius:14px;padding:14px 20px;backdrop-filter:blur(6px);min-width:130px;
+}
+.fact b{display:block;font-family:"Merriweather",serif;font-size:1.5rem;color:var(--sarga);line-height:1.1}
+.fact span{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:600}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:15px 30px;border-radius:100px;font-weight:700;font-size:.95rem;
+  transition:transform .22s ease, box-shadow .22s ease, background .22s ease;
+  border:2px solid transparent;cursor:pointer;
+}
+.btn-primary{background:var(--sarga);color:#191700}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 36px -12px rgba(242,216,10,.75)}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.1);transform:translateY(-3px)}
+.scroll-hint{
+  position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:3;
+  color:rgba(255,255,255,.5);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.scroll-hint .bar{width:1px;height:38px;background:linear-gradient(to bottom,transparent,var(--sarga));animation:drop 1.9s infinite}
+@keyframes drop{0%{opacity:0;transform:translateY(-14px)}50%{opacity:1}100%{opacity:0;transform:translateY(14px)}}
+@media(max-width:600px){.hero-in{padding:110px 0 80px}.scroll-hint{display:none}}
+
+/* ============ MASZK ============ */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.2,.7,.3,1), transform .8s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ============ LEVÉL ============ */
+.letter{background:var(--pane)}
+.letter-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:46px;align-items:start}
+@media(max-width:900px){.letter-grid{grid-template-columns:1fr}}
+.card{
+  background:#fff;border-radius:20px;padding:36px;box-shadow:var(--arnyek);
+  border:1px solid rgba(14,21,18,.05);position:relative;overflow:hidden;
+}
+.card::before{content:"";position:absolute;top:0;left:0;width:5px;height:100%;background:linear-gradient(var(--zold),var(--sarga))}
+.quote{
+  font-family:"Merriweather",serif;font-size:1.02rem;font-style:italic;
+  color:#3a4640;border-left:none;padding-left:22px;margin:18px 0;position:relative;line-height:1.75;
+}
+.quote::before{content:"„";font-size:3rem;color:var(--zold);opacity:.25;position:absolute;left:-4px;top:-14px}
+.quote p+p{margin-top:14px}
+.meta-list{list-style:none;display:grid;gap:14px;margin-top:6px}
+.meta-list li{display:flex;gap:14px;align-items:flex-start;font-size:.95rem}
+.meta-list .ico{
+  flex:0 0 34px;height:34px;border-radius:10px;background:rgba(31,166,90,.1);
+  display:grid;place-items:center;color:var(--zold-sotet);font-size:1rem;
+}
+.meta-list b{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--szurke)}
+.who{margin-top:26px;padding-top:24px;border-top:1px dashed rgba(14,21,18,.13);font-size:.9rem;color:var(--szurke)}
+.who b{color:var(--szoveg)}
+
+/* ============ ÍV ============ */
+.arc{background:linear-gradient(160deg,var(--dokk) 0%,var(--dokk-2) 60%,#0b3b22 100%);color:#fff;overflow:hidden}
+.arc .section h2{color:#fff}
+.arc .lead{color:rgba(255,255,255,.68)}
+.steps{display:grid;gap:0;margin-top:56px;position:relative}
+.step{
+  display:grid;grid-template-columns:96px 1fr;gap:28px;position:relative;padding-bottom:52px;
+}
+.step:last-child{padding-bottom:0}
+.step::before{
+  content:"";position:absolute;left:47px;top:74px;bottom:0;width:2px;
+  background:linear-gradient(var(--vonal),rgba(255,255,255,.06));
+}
+.step:last-child::before{display:none}
+.step-num{
+  width:96px;height:96px;border-radius:50%;
+  background:rgba(255,255,255,.04);border:2px solid rgba(61,187,106,.4);
+  display:grid;place-items:center;font-family:"Merriweather",serif;
+  font-size:1.9rem;color:var(--sarga);position:relative;z-index:2;
+  transition:transform .5s ease,border-color .5s ease,background .5s ease;
+}
+.step:hover .step-num{transform:scale(1.08);border-color:var(--sarga);background:rgba(242,216,10,.08)}
+.step-body h3{font-size:1.28rem;color:#fff;margin-bottom:10px}
+.step-body p{color:rgba(255,255,255,.72);font-size:.97rem;max-width:64ch}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+.chip{
+  font-size:.79rem;font-weight:600;padding:7px 14px;border-radius:100px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);
+  color:rgba(255,255,255,.82);display:inline-flex;align-items:center;gap:7px;
+}
+.chip.hl{background:rgba(242,216,10,.14);border-color:rgba(242,216,10,.4);color:var(--sarga)}
+@media(max-width:640px){
+  .step{grid-template-columns:64px 1fr;gap:18px}
+  .step-num{width:64px;height:64px;font-size:1.35rem}
+  .step::before{left:31px;top:52px}
+}
+
+/* ============ 6+1 MODELL ============ */
+.model-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:20px;margin-top:52px}
+.mcard{
+  background:#fff;border:1px solid rgba(14,21,18,.08);border-radius:18px;padding:28px;
+  transition:transform .32s cubic-bezier(.2,.7,.3,1), box-shadow .32s, border-color .32s;
+  position:relative;overflow:hidden;
+}
+.mcard::after{
+  content:"";position:absolute;inset:0;background:linear-gradient(140deg,rgba(31,166,90,.06),transparent 55%);
+  opacity:0;transition:opacity .32s;
+}
+.mcard:hover{transform:translateY(-8px);box-shadow:0 26px 54px -22px rgba(14,21,18,.35);border-color:rgba(31,166,90,.35)}
+.mcard:hover::after{opacity:1}
+.mcard .mn{
+  font-family:"Merriweather",serif;font-size:2.4rem;color:rgba(31,166,90,.22);
+  line-height:1;margin-bottom:14px;transition:color .32s;
+}
+.mcard:hover .mn{color:var(--zold)}
+.mcard h3{font-size:1.1rem;margin-bottom:8px}
+.mcard p{font-size:.9rem;color:var(--szurke)}
+.mcard .when{
+  margin-top:16px;padding-top:14px;border-top:1px solid rgba(14,21,18,.07);
+  font-size:.82rem;color:var(--zold-sotet);font-weight:600;
+}
+.mcard.plus{
+  background:linear-gradient(150deg,#12251b,#0d1a12);
+  border-color:rgba(242,216,10,.35);
+}
+.mcard.plus .mn{color:rgba(242,216,10,.35)}
+.mcard.plus:hover .mn{color:var(--sarga)}
+.mcard.plus h3{color:#fff}
+.mcard.plus p{color:rgba(255,255,255,.7)}
+.mcard.plus .when{color:var(--sarga);border-top-color:rgba(255,255,255,.12)}
+
+/* ============ PÉLDÁK ============ */
+.examples{background:var(--pane)}
+.ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:52px}
+@media(max-width:880px){.ex-grid{grid-template-columns:1fr}}
+.ex{
+  background:#fff;border-radius:20px;overflow:hidden;box-shadow:var(--arnyek);
+  display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.7,.3,1);
+}
+.ex:hover{transform:translateY(-6px)}
+.ex-img{height:210px;background-size:cover;background-position:center;position:relative}
+.ex-img::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(14,21,18,.55),transparent 60%)}
+.ex-tag{
+  position:absolute;top:16px;left:16px;z-index:2;background:var(--sarga);color:#191700;
+  font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  padding:7px 14px;border-radius:100px;
+}
+.ex-tag.zold{background:var(--zold);color:#fff}
+.ex-body{padding:28px 30px 32px}
+.ex-body h3{font-size:1.16rem;margin-bottom:12px}
+.ex-body>p{font-size:.93rem;color:var(--szurke);margin-bottom:16px}
+.ex-list{list-style:none;display:grid;gap:10px}
+.ex-list li{font-size:.9rem;padding-left:26px;position:relative;color:#3a4640}
+.ex-list li::before{
+  content:"";position:absolute;left:0;top:.55em;width:9px;height:9px;
+  background:var(--sarga);border-radius:2px;transform:rotate(45deg);
+}
+.ex-list li b{color:var(--zold-sotet)}
+
+/* ============ KARÁCSONY ============ */
+.xmas{background:linear-gradient(170deg,#0e1512,#0a2015 50%,#0e1512);color:#fff;position:relative;overflow:hidden}
+.xmas .section h2{color:#fff}
+.xmas .lead{color:rgba(255,255,255,.7)}
+.snow{position:absolute;inset:0;pointer-events:none;z-index:1}
+.xmas-in{position:relative;z-index:2}
+.gift-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:52px}
+.gift{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
+  border-radius:16px;padding:26px;transition:transform .3s,background .3s,border-color .3s;
+  position:relative;overflow:hidden;
+}
+.gift::before{
+  content:"";position:absolute;top:-40px;right:-40px;width:100px;height:100px;border-radius:50%;
+  background:radial-gradient(circle,rgba(242,216,10,.22),transparent 70%);
+  transition:transform .45s;
+}
+.gift:hover{transform:translateY(-6px);background:rgba(255,255,255,.09);border-color:rgba(242,216,10,.4)}
+.gift:hover::before{transform:scale(1.7)}
+.gift .em{font-size:1.7rem;margin-bottom:12px;display:block}
+.gift h3{font-size:1.03rem;color:#fff;margin-bottom:8px}
+.gift p{font-size:.87rem;color:rgba(255,255,255,.68)}
+.gift .live{
+  display:inline-block;margin-top:14px;font-size:.7rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--zold-elve);
+  border:1px solid rgba(61,187,106,.4);border-radius:100px;padding:5px 12px;
+}
+.gift .live.pre{color:var(--sarga);border-color:rgba(242,216,10,.35)}
+
+/* ============ IDŐVONAL ============ */
+.agenda{margin-top:52px;border-radius:20px;overflow:hidden;box-shadow:var(--arnyek);background:#fff}
+.arow{
+  display:grid;grid-template-columns:110px 1fr 150px;gap:20px;align-items:center;
+  padding:22px 30px;border-bottom:1px solid rgba(14,21,18,.07);
+  transition:background .25s;position:relative;
+}
+.arow:last-child{border-bottom:none}
+.arow:hover{background:rgba(31,166,90,.045)}
+.arow .t{font-family:"Merriweather",serif;font-weight:700;color:var(--zold-sotet);font-size:.98rem}
+.arow .d{font-size:.93rem;color:#3a4640}
+.arow .d b{display:block;color:var(--szoveg);font-size:1rem;margin-bottom:3px}
+.arow .bar{height:6px;border-radius:100px;background:rgba(14,21,18,.07);overflow:hidden}
+.arow .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--zold),var(--sarga));border-radius:100px;width:0;transition:width 1.3s cubic-bezier(.2,.7,.3,1)}
+@media(max-width:700px){
+  .arow{grid-template-columns:1fr;gap:8px;padding:20px}
+  .arow .bar{display:none}
+}
+
+/* ============ VÉGEREDMÉNY ============ */
+.outcome{background:var(--pane)}
+.take-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;margin-top:52px}
+.take{background:#fff;border-radius:18px;padding:30px;box-shadow:0 14px 40px -24px rgba(14,21,18,.4);border-top:3px solid var(--zold)}
+.take:nth-child(2){border-top-color:var(--sarga)}
+.take:nth-child(3){border-top-color:var(--zold-elve)}
+.take .big{font-size:1.9rem;font-family:"Merriweather",serif;color:var(--zold-sotet);line-height:1}
+.take h3{font-size:1.06rem;margin:12px 0 8px}
+.take p{font-size:.9rem;color:var(--szurke)}
+
+/* ============ AJÁNLAT ============ */
+.offer{background:linear-gradient(150deg,var(--dokk),#10301f);color:#fff}
+.offer .section h2{color:#fff}
+.offer-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;margin-top:20px}
+@media(max-width:900px){.offer-grid{grid-template-columns:1fr}}
+.price-card{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);
+  border-radius:22px;padding:38px;backdrop-filter:blur(8px);
+}
+.price-card .fee{font-family:"Merriweather",serif;font-size:2.4rem;color:var(--sarga);line-height:1;margin-bottom:6px}
+.price-card .fee small{font-size:.9rem;color:rgba(255,255,255,.6);font-family:"Inter",sans-serif;display:block;margin-top:8px;letter-spacing:.04em}
+.incl{list-style:none;margin-top:26px;display:grid;gap:13px}
+.incl li{display:flex;gap:12px;font-size:.93rem;color:rgba(255,255,255,.85);align-items:flex-start}
+.incl li svg{flex:0 0 20px;margin-top:3px}
+.offer-note{margin-top:22px;font-size:.82rem;color:rgba(255,255,255,.5);border-top:1px solid rgba(255,255,255,.12);padding-top:18px}
+
+/* ============ CTA ============ */
+.cta{background:var(--sarga);color:#191700;padding:78px 0;text-align:center}
+.cta h2{font-size:clamp(1.6rem,3.6vw,2.4rem);margin-bottom:14px}
+.cta p{font-size:1.05rem;margin-bottom:30px;opacity:.82;max-width:60ch;margin-left:auto;margin-right:auto}
+.cta .btn-dark{background:#14140a;color:var(--sarga)}
+.cta .btn-dark:hover{transform:translateY(-3px);box-shadow:0 18px 36px -14px rgba(0,0,0,.5)}
+.cta .btn-line{border-color:rgba(20,20,10,.4);color:#191700}
+.cta .btn-line:hover{background:rgba(20,20,10,.08)}
+.contact-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:34px;font-size:.92rem;font-weight:600}
+.contact-row a{color:#191700;border-bottom:2px solid rgba(20,20,10,.25);padding-bottom:2px}
+.contact-row a:hover{border-color:#191700}
+
+/* ============ FOOTER ============ */
+footer{background:var(--dokk);color:rgba(255,255,255,.55);padding:46px 0;font-size:.85rem}
+.foot-in{display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between}
+.foot-in img{height:40px;border-radius:4px;background:#fff;padding:4px 8px}
+footer a{color:rgba(255,255,255,.75)}
+footer a:hover{color:var(--sarga)}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-in">
+    <a href="#top" class="nav-brand">
+      <img src="assets/cv-logo.jpg" alt="Centervill Kft.">
+      <span>AI előadás · év végi rendezvény</span>
+    </a>
+    <div class="nav-links">
+      <a href="#level">A felkérés</a>
+      <a href="#iv">Tematika</a>
+      <a href="#modell">6+1 modell</a>
+      <a href="#peldak">Centervill példák</a>
+      <a href="#karacsony">Karácsonyi blokk</a>
+    </div>
+    <a href="#ajanlat" class="nav-cta">Ajánlat</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-scrim"></div>
+  <canvas id="particles"></canvas>
+  <div class="wrap hero-in">
+    <div class="hero-badge"><span class="dot"></span>2026. december 16. · Domonyvölgy · 80 fő</div>
+    <h1>Amikor a <span class="ki">villamos</span> találkozik a mesterséges intelligenciával</h1>
+    <p class="sub">Könnyed, humoros — mégis tartalmas AI előadás a Centervill Kft. év végi rendezvényére. Párhuzamok a technológiai fejlődéssel, és az, ahogyan az AI holnap reggel bekerül az irodába és a terepre.</p>
+    <div class="hero-facts">
+      <div class="fact"><b>45</b><span>perc</span></div>
+      <div class="fact"><b>80</b><span>résztvevő</span></div>
+      <div class="fact"><b>6+1</b><span>módszertani modell</span></div>
+      <div class="fact"><b>0</b><span>unalmas dia</span></div>
+    </div>
+    <div class="hero-actions">
+      <a href="#iv" class="btn btn-primary">Tematika megtekintése →</a>
+      <a href="#ajanlat" class="btn btn-ghost">Az ajánlat</a>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Görgessen</span><span class="bar"></span></div>
+</header>
+
+<!-- ================= LEVÉL ================= -->
+<section class="section letter" id="level">
+  <div class="wrap">
+    <div class="letter-grid">
+      <div class="reveal">
+        <span class="eyebrow">A felkérés</span>
+        <h2>Amit kértek — és amit ezért adok</h2>
+        <div class="quote">
+          <p>„Az előadás témája a mesterséges intelligencia lenne, könnyed, humoros, ugyanakkor tartalmas megközelítésben… érdekesnek tartanánk az AI és a technológiai fejlődés közötti párhuzamok bemutatását is.”</p>
+          <p>„Fontos számunkra, hogy az előadás szórakoztató legyen, ugyanakkor hasznos, elgondolkodtató és a mindennapokban is értelmezhető gondolatokat adjon.”</p>
+        </div>
+        <ul class="meta-list">
+          <li><span class="ico">◈</span><div><b>Rendezvény</b>Centervill Kft. év végi rendezvény, 2026. december 16.</div></li>
+          <li><span class="ico">◈</span><div><b>Helyszín</b>Domonyvölgy</div></li>
+          <li><span class="ico">◈</span><div><b>Forma</b>45 perces előadás, élő bemutatókkal · 80 fő</div></li>
+          <li><span class="ico">◈</span><div><b>Hangvétel</b>Könnyed, humoros, mégis tartalmas — szakmai közönségnek</div></li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="card">
+          <h3 style="font-size:1.15rem;margin-bottom:14px">Négy kérés, négy válasz</h3>
+          <ul class="meta-list">
+            <li><span class="ico">1</span><div><b>AI és technológiai fejlődés párhuzama</b>Az elektromosság behálózta a világot — az AI most ugyanezt teszi a döntésekkel.</div></li>
+            <li><span class="ico">2</span><div><b>AI a mindennapi munkában</b>Hogyan segít ma a munkavállalónak, nem holnap, hanem már ma reggel.</div></li>
+            <li><span class="ico">3</span><div><b>Fizikai és irodai munkavégzés jövője</b>Mi változik a szerelőnél, a műhelyben és az irodában.</div></li>
+            <li><span class="ico">4</span><div><b>Szórakoztató, de hasznos</b>Nevetünk — és a végén mindenki hazavisz legalább egy használható lépést.</div></li>
+          </ul>
+          <div class="who">
+            <b>Előadó:</b> Budaházy Szabolcs — ARworks Kft. / DarwinAI<br>
+            VR · AR · AI · 3D rendszerek B2B környezetben, több mint két évtizede.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEMATIKA / ÍV ================= -->
+<section class="section arc" id="iv">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Tematikai javaslat</span>
+      <h2>A 45 perc íve — öt felvonásban</h2>
+      <p class="lead">Előzetes koncepció. Ha meg tudunk állapodni, a hallgatóság összetételéhez és az AI-hoz való viszonyához igazítom — ezen a szerkezeten belül bármi hangsúlyt kaphat.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3>Nyitány — hol tart az AI december 15-én?</h3>
+          <p>Néhány nagyon aktuális, meglepő kép és videó. Nem a tavalyi hírek: az, ami a rendezvény előtti napokban történt. A cél a közös kiindulópont és egy kis „nahát” pillanat.</p>
+          <div class="chips">
+            <span class="chip hl">Élő hírfelütés</span>
+            <span class="chip">Képek · videók</span>
+            <span class="chip">5 perc</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3>Az elektromosság és az AI — ugyanaz a film, más szereplőkkel</h3>
+          <p>A villamosítás behálózta a világot, és közben megváltoztatta, hogyan dolgozunk. Az AI most ugyanezt teszi, csak nem árammal, hanem döntésekkel. Szórakoztató párhuzamok a két technológiai ugrás között — a szakmát érintő részletekkel.</p>
+          <div class="chips">
+            <span class="chip hl">Technológiai párhuzamok</span>
+            <span class="chip">Szakmai közönségnek</span>
+            <span class="chip">8 perc</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <h3>Hogyan használjuk? — a 6+1 módszertani modell</h3>
+          <p>Interaktív rész: szavaztatva, kérdezve, hogy ki mit használ ezek közül. A visszajelzések fényében tudok egy-egy megoldást jobban kiemelni, másokat csak megmutatni. Így az előadás a teremben ülőkre szabódik.</p>
+          <div class="chips">
+            <span class="chip hl">Közös szavazás</span>
+            <span class="chip">A 6+1 modell</span>
+            <span class="chip">10 perc</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <h3>Konkrét Centervill-példák — iroda és terep</h3>
+          <p>Kifejezetten erre az estére, erre a cégre szabva: ajánlatkezelés, villamos tervek értékelése, kapcsolószekrény-fotók elemzése, hangvezérléses AI szerelés közben, munkalapok. Láttatva, hol kezdődhet a következő hétfő.</p>
+          <div class="chips">
+            <span class="chip hl">Élő bemutatók</span>
+            <span class="chip">Iroda + terep</span>
+            <span class="chip">15 perc</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num">05</div>
+        <div class="step-body">
+          <h3>Karácsonyi blokk — nevetünk egyet, és hazaviszünk valamit</h3>
+          <p>Jópofa, ünnepi AI-példák: ajándékválasztás, vacsoramenü, szilveszteri céges induló, videós tűzijáték. Egy részét <b style="color:var(--sarga)">élőben hozzuk létre</b>, másokat előre elkészítek és csak a folyamatot mutatom be.</p>
+          <div class="chips">
+            <span class="chip hl">Élő generálás</span>
+            <span class="chip">Ünnepi hangulat</span>
+            <span class="chip">7 perc</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6+1 MODELL ================= -->
+<section class="section" id="modell">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow">A módszertani gerinc</span>
+      <h2>A DarwinAI 6+1 modellje</h2>
+      <p class="lead">A mai AI-eszközöket hét, a gyakorlatban is használható kategóriába rendezem — az egyszerű prompttól az önjáró asszisztensig. Ez adja az előadás gerincét: nem eszközöket sorolok, hanem megmutatom, melyik feladathoz melyik szint illik.</p>
+    </div>
+
+    <div class="model-grid">
+      <div class="mcard reveal">
+        <div class="mn">1</div>
+        <h3>Promptolás</h3>
+        <p>Egy kérdés, egy válasz — szöveg vagy kép. A legalapvetőbb szint, ahol mindenki elkezdheti.</p>
+        <div class="when">Gyors kérdésekhez, ötleteléshez, vázlatokhoz</div>
+      </div>
+      <div class="mcard reveal">
+        <div class="mn">2</div>
+        <h3>Saját GPT / Gemini Gem</h3>
+        <p>Saját célra szabott asszisztens konkrét szerepkörrel, tudással és szabályrendszerrel.</p>
+        <div class="when">Ismétlődő feladatokhoz, saját módszertanhoz</div>
+      </div>
+      <div class="mcard reveal">
+        <div class="mn">3</div>
+        <h3>Automatizáció</h3>
+        <p>Folyamatok összekapcsolása: adatok mozgatása és feladatok automatizálása AI-val, rendszerek között.</p>
+        <div class="when">Ismétlődő folyamatokhoz, integrációhoz</div>
+      </div>
+      <div class="mcard reveal">
+        <div class="mn">4</div>
+        <h3>Office plug-inek</h3>
+        <p>Közvetlen munka a megnyitott Excelben, Wordben, PowerPointban — táblázatokkal, szövegekkel.</p>
+        <div class="when">Elemzéshez, szerkesztéshez, riportkészítéshez</div>
+      </div>
+      <div class="mcard reveal">
+        <div class="mn">5</div>
+        <h3>Co-work környezet</h3>
+        <p>Egy egész projektmappa válik közös munkatérré: az AI olvassa, értelmezi és módosítja a fájlokat.</p>
+        <div class="when">Közös projektekhez, csapatos dokumentációhoz</div>
+      </div>
+      <div class="mcard reveal">
+        <div class="mn">6</div>
+        <h3>Vibe Coding</h3>
+        <p>AI-alapú kódolás és prototípus-készítés természetes nyelven, gyors fejlesztési ciklusokkal.</p>
+        <div class="when">Szkriptekhez, prototípusokhoz, belső eszközökhöz</div>
+      </div>
+      <div class="mcard plus reveal">
+        <div class="mn">+1</div>
+        <h3>Önjáró asszisztens</h3>
+        <p>Nem egy eszköz, hanem egy munkatárs: értelmezi a célt, részekre bontja a folyamatot, és csak a döntési pontokon kérdez.</p>
+        <div class="when">Több rendszert érintő, ismétlődő működéshez</div>
+      </div>
+    </div>
+    <p class="center reveal" style="margin-top:32px;font-size:.9rem;color:var(--szurke)">
+      A modell részletesen: <a href="https://darwinai.hu/6plusz1" target="_blank" rel="noopener">darwinai.hu/6plusz1</a>
+    </p>
+  </div>
+</section>
+
+<!-- ================= CENTERVILL PÉLDÁK ================= -->
+<section class="section examples" id="peldak">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Kifejezetten a Centervill-nek</span>
+      <h2>Példák az irodából és a terepről</h2>
+      <p class="lead">Ezek nem általános AI-dolgok: a villamos szakma konkrét, mindennapi helyzeteire készülnek. Néhányat élőben is lefuttatunk az előadáson.</p>
+    </div>
+
+    <div class="ex-grid">
+      <div class="ex reveal">
+        <div class="ex-img" style="background-image:url('assets/field.jpg')">
+          <span class="ex-tag">Terep</span>
+        </div>
+        <div class="ex-body">
+          <h3>Kapcsolószekrény-fotók elemzése</h3>
+          <p>A szerelő lefotózza a nyitott szekrényt — az AI azonnal kiolvassa, mi látható, mit érdemes ellenőrizni, és mit dokumentáljon.</p>
+          <ul class="ex-list">
+            <li><b>Fotó → azonosítás:</b> készülékek, kábelek, kapcsolási állapot</li>
+            <li><b>Ellenőrzőlista:</b> amit a helyszínen még érdemes megnézni</li>
+            <li><b>Dokumentálás:</b> a fotó és a leírás egy helyre kerül</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ex reveal">
+        <div class="ex-img" style="background-image:url('assets/hero.jpg')">
+          <span class="ex-tag zold">Iroda</span>
+        </div>
+        <div class="ex-body">
+          <h3>Ajánlatok és villamos tervek</h3>
+          <p>Tervrajzok, műszaki leírások, ajánlatkérések gyors értékelése — nem helyettesítve a szakembert, hanem előkészítve neki a döntést.</p>
+          <ul class="ex-list">
+            <li><b>Tervértékelés:</b> eltérések, hiányok, kérdéslista másodpercek alatt</li>
+            <li><b>Ajánlat-összehasonlítás:</b> tételek párosítása, eltérések kiemelése</li>
+            <li><b>Anyaglista:</b> tervekből kiolvasott tételes mennyiség</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ex reveal">
+        <div class="ex-img" style="background-image:url('assets/progress.jpg')">
+          <span class="ex-tag">Terep</span>
+        </div>
+        <div class="ex-body">
+          <h3>Hangvezérléses AI — két kézzel szerelni</h3>
+          <p>A szerelőnek nincs szabad keze a telefonhoz. Az AI-hoz beszél: miközben dolgozik, szóban kap választ, jegyzetet, emlékeztetőt.</p>
+          <ul class="ex-list">
+            <li><b>Kéz nélkül:</b> beszéddel kérdezés és feljegyzés a helyszínen</li>
+            <li><b>Munkalap:</b> szóban diktált tételek és elvégzett munka</li>
+            <li><b>Bekötés-ellenőrzés:</b> sorrend, jelölés, csatlakozási pont</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ex reveal">
+        <div class="ex-img" style="background-image:url('assets/mascot.jpg')">
+          <span class="ex-tag zold">Iroda</span>
+        </div>
+        <div class="ex-body">
+          <h3>Munkalapok és adminisztráció AI-val</h3>
+          <p>A terepi jegyzetből, fotóból, hangfelvételből összeáll a rendezett munkalap — a papírmunka nem a szerelő esti műszakja lesz.</p>
+          <ul class="ex-list">
+            <li><b>Hang → munkalap:</b> terepi diktálásból kész dokumentum</li>
+            <li><b>Fotók rendszerezése:</b> projekthez és dátumhoz kötve</li>
+            <li><b>Riportok:</b> heti összesítés egy kéréssel</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="reveal" style="margin-top:30px;font-size:.93rem;color:var(--szurke);max-width:72ch">
+      <b style="color:var(--szoveg)">Fontos:</b> ezek minták, nem ígéretek — a cél, hogy lássák, mi mindenre lehetne használni. Az estén közösen kiválasztunk néhányat, és azt élesben is bemutatjuk.
+    </p>
+  </div>
+</section>
+
+<!-- ================= KARÁCSONY ================= -->
+<section class="section xmas" id="karacsony">
+  <canvas class="snow" id="snow"></canvas>
+  <div class="wrap xmas-in">
+    <div class="reveal">
+      <span class="eyebrow">Ünnepi blokk</span>
+      <h2>A karácsonyi rész — nevetünk egyet, és visznek haza valamit</h2>
+      <p class="lead">Rövid, jópofa szekció. Néhány dolgot előre elkészítek, másokat élőben hozunk létre a teremben — így nem „varázslat”, hanem megismételhető folyamat.</p>
+    </div>
+
+    <div class="gift-grid">
+      <div class="gift reveal">
+        <span class="em">🎁</span>
+        <h3>Ajándékválasztó AI</h3>
+        <p>Néhány kérdés — kinek, mennyi idő alatt, mi a hobbija — és megvannak a jelöltek. A céges ajándékozásra is működik.</p>
+        <span class="live">Élőben</span>
+      </div>
+      <div class="gift reveal">
+        <span class="em">🍽️</span>
+        <h3>Vacsoramenü percek alatt</h3>
+        <p>Mi van a hűtőben karácsonykor? Az AI összeállítja a menüt, és a bevásárlólistát is megírja.</p>
+        <span class="live pre">Előkészítve</span>
+      </div>
+      <div class="gift reveal">
+        <span class="em">🎵</span>
+        <h3>Céges szilveszteri induló</h3>
+        <p>Dalszöveg a cégről, aztán zene. Nem szép, de mindenki énekelni fogja — és erről a cégről szól.</p>
+        <span class="live">Élőben</span>
+      </div>
+      <div class="gift reveal">
+        <span class="em">🎆</span>
+        <h3>Videós tűzijáték</h3>
+        <p>Tűzijáték-generálás videóban — a szilveszteri céges vetítéshez, vagy csak a nevetésért.</p>
+        <span class="live pre">Előkészítve</span>
+      </div>
+      <div class="gift reveal">
+        <span class="em">📱</span>
+        <h3>Mobilos villanyszerelő játék</h3>
+        <p>Apró, mobilon játszható játék, amelyet a résztvevők haza is vihetnek — a rendezvény emlékére.</p>
+        <span class="live">Hazavihető</span>
+      </div>
+      <div class="gift reveal">
+        <span class="em">🤖</span>
+        <h3>+1 meglepetés</h3>
+        <p>Maradjon egy szabad hely: az estén kitalált, közös ötletek közül legalább egyet élőben megcsinálunk.</p>
+        <span class="live">Helyben</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NAPIREND ================= -->
+<section class="section" id="napirend">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Időbeosztás</span>
+      <h2>45 perc, percről percre</h2>
+      <p class="lead">A szerkezet rugalmas: az interaktív rész hossza a terem válaszaitól függ.</p>
+    </div>
+    <div class="agenda reveal">
+      <div class="arow">
+        <div class="t">00 – 05</div>
+        <div class="d"><b>Nyitány: hol tart ma az AI?</b>Friss képek és videók a rendezvény előtti napokból</div>
+        <div class="bar"><i data-w="11"></i></div>
+      </div>
+      <div class="arow">
+        <div class="t">05 – 13</div>
+        <div class="d"><b>Elektromosság és AI — párhuzamok</b>A két technológiai ugrás, szakmai szemmel</div>
+        <div class="bar"><i data-w="18"></i></div>
+      </div>
+      <div class="arow">
+        <div class="t">13 – 23</div>
+        <div class="d"><b>6+1 modell — közös szavazás</b>Ki mit használ? A terem visszajelzéseire szabva</div>
+        <div class="bar"><i data-w="22"></i></div>
+      </div>
+      <div class="arow">
+        <div class="t">23 – 38</div>
+        <div class="d"><b>Centervill-példák: iroda és terep</b>Élő bemutatók — fotóelemzés, tervek, munkalapok</div>
+        <div class="bar"><i data-w="33"></i></div>
+      </div>
+      <div class="arow">
+        <div class="t">38 – 45</div>
+        <div class="d"><b>Karácsonyi blokk és zárás</b>Ünnepi generálások, majd a másnapi első lépések</div>
+        <div class="bar"><i data-w="16"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VÉGEREDMÉNY ================= -->
+<section class="section outcome" id="vegeredmeny">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow">Mit visznek haza</span>
+      <h2>Nem az a cél, hogy tudjanak az AI-ról</h2>
+      <p class="lead">Hanem hogy másnap reggel legalább egy ember kipróbáljon valamit, amelytől kevesebb lesz a papírmunka.</p>
+    </div>
+    <div class="take-grid">
+      <div class="take reveal">
+        <div class="big">3</div>
+        <h3>Névre szóló ötlet</h3>
+        <p>Nem „az AI sokat tud”, hanem: ez a konkrét feladat, ez az eszköz, ez az első lépés.</p>
+      </div>
+      <div class="take reveal">
+        <div class="big">1</div>
+        <h3>Valódi időnyereség</h3>
+        <p>Ha a résztvevők közül valaki a hét elején kipróbálja, a hét végén már mérhető a megtakarítás.</p>
+      </div>
+      <div class="take reveal">
+        <div class="big">0</div>
+        <h3>Felesleges riogatás</h3>
+        <p>Semmi sci-fi pánikkeltés: tárgyilagos, a mindennapokban értelmezhető gondolatok.</p>
+      </div>
+    </div>
+    <p class="center reveal" style="margin-top:38px;font-size:1.02rem;max-width:66ch;margin-left:auto;margin-right:auto;color:#3a4640">
+      A végén konkrét teendők: mit lehet holnap reggel elkezdeni, kit érdemes bevonni, és mi az, amit még nem érdemes bevezetni.
+    </p>
+  </div>
+</section>
+
+<!-- ================= AJÁNLAT ================= -->
+<section class="section offer" id="ajanlat">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center">
+      <span class="eyebrow" style="color:var(--zold-elve)">Ajánlat</span>
+      <h2>Egy előadás, minden benne van</h2>
+    </div>
+    <div class="offer-grid">
+      <div class="reveal">
+        <p style="color:rgba(255,255,255,.85);font-size:1.05rem;margin-bottom:20px">
+          45 perces, élő bemutatókkal kísért előadás a Centervill Kft. 2026. december 16-i év végi rendezvényére, Domonyvölgyben, 80 fő részére.
+        </p>
+        <ul class="incl">
+          <li><svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M4 10.5l4 4 8-9" stroke="#F2D80A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Teljes tematikai terv a hallgatósághoz igazítva</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M4 10.5l4 4 8-9" stroke="#F2D80A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Kifejezetten Centervill-re készített példák (iroda + terep)</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M4 10.5l4 4 8-9" stroke="#F2D80A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Élő AI-bemutatók és interaktív szavazás a teremben</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M4 10.5l4 4 8-9" stroke="#F2D80A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Karácsonyi, ünnepi AI-blokk (élőben és előkészítve)</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M4 10.5l4 4 8-9" stroke="#F2D80A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Prezentáció, vetített anyag és hazavihető összefoglaló</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" width="20" height="20"><path d="M4 10.5l4 4 8-9" stroke="#F2D80A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Egyéni konzultáció a rendezvényt követő két hétben</span></li>
+        </ul>
+      </div>
+      <div class="price-card reveal">
+        <div class="fee">Ajánlat</div>
+        <small>400 000 Ft + ÁFA</small>
+        <div class="offer-note" style="border-top:none;padding-top:22px;margin-top:22px">
+          A részvétel feltételei, a helyszínre jutás és a technikai igények (kivetítő, hangosítás) egyeztetés után véglegesíthetők.
+        </div>
+        <div style="margin-top:26px">
+          <a href="#kapcsolat" class="btn btn-primary" style="width:100%;justify-content:center">Kapcsolatfelvétel →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta" id="kapcsolat">
+  <div class="wrap">
+    <h2>Egyeztessük a részleteket</h2>
+    <p>Szívesen átbeszélem a hallgatóság összetételét, és pontosítom a tematikát. Ha kérdés van, keressen bátran.</p>
+    <div class="contact-row">
+      <a href="mailto:szbudahazy@arworks.com">szbudahazy@arworks.com</a>
+      <a href="tel:+36309900336">+36 30 99 00 336</a>
+      <a href="https://darwinai.hu" target="_blank" rel="noopener">darwinai.hu</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <img src="assets/cv-logo.jpg" alt="Centervill Kft.">
+    <div>Ajánlat és tematikai javaslat · Centervill Kft. év végi rendezvény · 2026. december 16., Domonyvölgy</div>
+    <div>Készítette: <a href="mailto:szbudahazy@arworks.com">Budaházy Szabolcs</a> · ARworks / DarwinAI</div>
+  </div>
+</footer>
+
+<script>
+/* ===== NAV scroll ===== */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40)},{passive:true});
+
+/* ===== Reveal on scroll ===== */
+const io=new IntersectionObserver((es)=>{
+  es.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('in'),(i%4)*90);
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ===== Agenda bars ===== */
+const bio=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.bar i').forEach(b=>b.style.width=b.dataset.w+'%');bio.unobserve(e.target)}})
+},{threshold:.35});
+document.querySelectorAll('.agenda').forEach(el=>bio.observe(el));
+
+/* ===== HERO particles: villamos szikra-hálózat ===== */
+(function(){
+  const c=document.getElementById('particles');if(!c)return;
+  const ctx=c.getContext('2d');
+  let W,H,parts=[],dpr=Math.min(devicePixelRatio||1,2);
+  function size(){W=c.clientWidth;H=c.clientHeight;c.width=W*dpr;c.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);build()}
+  function build(){
+    const n=Math.min(78,Math.round(W*H/16000));
+    parts=Array.from({length:n},()=>({
+      x:Math.random()*W,y:Math.random()*H,
+      vx:(Math.random()-.5)*.32,vy:(Math.random()-.5)*.32,
+      r:Math.random()*1.9+.7
+    }));
+  }
+  const mouse={x:-999,y:-999};
+  c.parentElement.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top});
+  function loop(){
+    ctx.clearRect(0,0,W,H);
+    for(const p of parts){
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>W)p.vx*=-1;
+      if(p.y<0||p.y>H)p.vy*=-1;
+      const dm=Math.hypot(p.x-mouse.x,p.y-mouse.y);
+      if(dm<130){p.vx+=(p.x-mouse.x)/dm*.012;p.vy+=(p.y-mouse.y)/dm*.012}
+      p.vx=Math.max(-.7,Math.min(.7,p.vx));p.vy=Math.max(-.7,Math.min(.7,p.vy));
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);
+      ctx.fillStyle='rgba(242,216,10,.72)';ctx.fill();
+    }
+    for(let i=0;i<parts.length;i++)for(let j=i+1;j<parts.length;j++){
+      const a=parts[i],b=parts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+      if(d<128){
+        ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
+        ctx.strokeStyle='rgba(61,187,106,'+(1-d/128)*.42+')';ctx.lineWidth=.75;ctx.stroke();
+      }
+    }
+    requestAnimationFrame(loop);
+  }
+  addEventListener('resize',size);size();loop();
+})();
+
+/* ===== Karácsonyi hópelyhek ===== */
+(function(){
+  const c=document.getElementById('snow');if(!c)return;
+  const ctx=c.getContext('2d');let W,H,fl=[],dpr=Math.min(devicePixelRatio||1,2);
+  function size(){W=c.clientWidth;H=c.clientHeight;c.width=W*dpr;c.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+    fl=Array.from({length:Math.min(90,Math.round(W/16))},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*2.2+.6,s:Math.random()*.7+.25,d:Math.random()*6.28,o:Math.random()*.4+.25}));}
+  function loop(){
+    ctx.clearRect(0,0,W,H);
+    for(const f of fl){
+      f.y+=f.s;f.d+=.012;f.x+=Math.sin(f.d)*.4;
+      if(f.y>H){f.y=-8;f.x=Math.random()*W}
+      ctx.beginPath();ctx.arc(f.x,f.y,f.r,0,7);
+      ctx.fillStyle='rgba(255,255,255,'+f.o+')';ctx.fill();
+    }
+    requestAnimationFrame(loop);
+  }
+  addEventListener('resize',size);size();loop();
+})();
+</script>
+</body>
+</html>
